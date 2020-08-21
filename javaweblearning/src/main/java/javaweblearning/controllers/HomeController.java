@@ -53,12 +53,13 @@ public class HomeController {
 	}
 	
 	public boolean isAllowedToSeeUsers() {
-		return securityContext.isCallerInRole("admin");
+		return ((HttpServletRequest)facesContext.getExternalContext().getRequest()).isUserInRole("admin");
+		//return securityContext.isCallerInRole("admin");
 	}
 	
 	public String logout() throws ServletException {
 		ExternalContext ec = facesContext.getExternalContext();
-		((HttpServletRequest)ec.getRequest()).logout();
+		((HttpServletRequest)ec.getRequest()).logout();;
 		return "/login.xhtml?faces-redirect=true";
 	}
 	 
