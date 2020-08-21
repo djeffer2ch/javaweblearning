@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import javax.transaction.Transactional;
 
 import javaweblearning.entities.Quality;
@@ -17,9 +19,12 @@ public class DataService {
 	@PersistenceContext(unitName = "PersistenceUnitName")
 	EntityManager em;
 	
+	@Inject
+	Pbkdf2PasswordHash passwordHasher;
+	
 	@Transactional
 	public User createUser(String name, String username, String password, String group) {
-		User newUser = new User(name, username, password, group);
+		User newUser = new User(name, username, passwordHasher.generate(password.toCharArray()), group);
 		em.persist(newUser);
 		em.flush();
 		return newUser;

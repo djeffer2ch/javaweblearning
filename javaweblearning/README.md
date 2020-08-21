@@ -1,6 +1,6 @@
 # javaweblearning
 
-Proyecto esqueleto basado en el excelente [tutorial](https://balusc.omnifaces.org/2020/04/jsf-23-tutorial-with-eclipse-maven.html) por BalusC.
+Proyecto esqueleto basado en los excelentes tutoriales de [BalusC](https://balusc.omnifaces.org/2020/04/jsf-23-tutorial-with-eclipse-maven.html)(Omnifaces) y [fturizo](https://www.youtube.com/watch?v=odJIoyFeAbk)(Payara)
 
 <hr>
 
