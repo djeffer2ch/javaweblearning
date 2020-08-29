@@ -1,6 +1,6 @@
 package javaweblearning.config;
 
-import javax.annotation.sql.DataSourceDefinition;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition;
